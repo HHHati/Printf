@@ -6,23 +6,28 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/17 11:25:00 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/18 15:18:05 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRC =
+SRC = $(wildcard *.c, src/*.c)
 OBJ = $(SRC:.c=.o)
-HEADER = libftprintf.h
+LIB = Libft/libft.a
+HEADER = printf.h Libft/libft.h
+INCLUDE = -I ./
+FLAGS = -Wall -Wextra 
 
 all: $(NAME)
 
-%.o: %.c
-	gcc -Wall -Wextra -Werror -o $*.o -c $*.c
+lib:
+	@make -C Libft
 
+exe: all
+	@./a.out
+	
 $(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@gcc $(FLAGS) $(INCLUDE) $(HEADER) $(LIB) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
