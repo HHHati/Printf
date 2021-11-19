@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/18 15:19:09 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/19 10:42:49 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,24 @@ void	ft_putspace(void)
 	write(1, " ", 1);
 }
 
+void	ft_apply_option(int param, const char *str)
+{
+	const char *options = {option0c(), option1s(), option2p(),
+		option3d(), option4i(), option5u(), option6x(),
+		option7X(), option8()}
+}
+
 int	ft_printf(const char *param, ...)
 {
-	static char	*input = "cspdiuxX%";
+	static char	*options = "cspdiuxX%";
 	size_t		i;
 
 	i = 0;
 	while (param[i])
 	{
-		if (param[i] == '%' && ft_strchr(input, param[i + 1]))
+		if (param[i] == '%' && ft_strchr(options, param[i + 1]))
 		{
-			ft_putspace();
+			ft_apply_option(ft_strchr(options, param[i + 1]), param);
 			i++;
 		}
 		else
@@ -59,6 +66,5 @@ int	ft_printf(const char *param, ...)
 
 int	main()
 {
-	printf("%s\n", "premier test :");
 	ft_printf("AAAA%dAAAA%%AAAA%iAAAA");
 }
