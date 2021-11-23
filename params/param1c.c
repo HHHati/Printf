@@ -6,12 +6,15 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 11:45:10 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:17:28 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_param1c(va_arg(list, int))
 {
-	write(va_arg(list, int));
+	char	c;
+
+	c = va_arg(list, int);
+	write(1, &c, 1);
 	return (0);
 }

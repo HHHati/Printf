@@ -6,7 +6,12 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:23 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 11:18:24 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:14:13 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int ft_param5i(va_arg(list, int))
+{
+	ft_putnbr(va_arg(list, int));
+	return (0);
+}
