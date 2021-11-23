@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   param1c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 11:24:34 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 11:36:57 by bade-lee         ###   ########.fr       */
+/*   Created: 2021/11/23 11:18:08 by bade-lee          #+#    #+#             */
+/*   Updated: 2021/11/23 11:45:10 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-
-//          ----------========== {   INCLUDES   } ==========----------
-
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
-
-//          ----------========== {     FCTS     } ==========----------
-
-int	ft_printf(const char *param, ...);
-
-#endif
+int	ft_param1c(va_arg(list, int))
+{
+	write(va_arg(list, int));
+	return (0);
+}
