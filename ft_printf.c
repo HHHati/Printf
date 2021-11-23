@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 11:42:16 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:05:43 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	ft_printf(const char *param, ...)
 		if (param[i] == '%' && ft_strchr(options, param[i + 1]))
 		{
 			ft_apply_param(ft_strchr(options, param[i + 1]));
-			va_arg(list, int)
 			i++;
 		}
 		else
