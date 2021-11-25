@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/25 11:38:03 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/25 14:53:45 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ NAME = libftprintf.a
 LIB = Libft/libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+INCLUDE = -I include
 
 #          ----------========== {     SRCS     } ==========----------
 
@@ -34,14 +35,18 @@ param9prc.c\
 
 OBJ = $(SRC:.c=.o)
 
-#          ----------========== {   SRCS LIB  } ==========----------
+#          ----------========== {   SRCS LIB   } ==========----------
 
 SRC += \
 ft_strchr.c\
 
-#          ----------========== {   INCLUDES   } ==========----------
+#          ----------========== {     OBJS     } ==========----------
 
-INCLUDE = -I printf.h -I Libft/libft.h
+SRC_DIR = src/
+OBJ_DIR = obj_printf/
+OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+
+VPATH= $(shell find $(SRC_DIR) -type d)
 
 #          ----------========== {    REGLES    } ==========----------
 
@@ -49,18 +54,27 @@ all: $(NAME)
 
 lib:
 	@make -C Libft
-
-exe: all
-	@./a.out
 	
-$(NAME): $(lib) $(OBJ)
-	@gcc $(FLAGS) $(INCLUDE) $(HEADER) $(LIB) $(OBJ)
+$(OBJ_DIR)%.o: %.c
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+
+$(NAME): lib $(OBJ)
+	@ar -rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@printf "\e[0;31mDELETED : *.o from Printf\e[0;m\n"
 
-fclean: clean
-	rm -f $(NAME)
+lclean: 
+	@make clean -C Libft
+
+lfclean: 
+	@make fclean -C Libft
+
+fclean: clean lfclean
+	@rm -f $(NAME)
+	@printf "\e[0;31mDELETED : libftprintf.a from Printf\e[0;m\n"
 
 re: fclean all
 
