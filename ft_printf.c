@@ -6,11 +6,11 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 13:10:19 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:43:38 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include "printf.h"
 
 #include <stdio.h>
 
@@ -66,5 +66,5 @@ int	ft_printf(const char *param, ...)
 
 int	main()
 {
-	ft_printf("AAAA%dAAAA%%AAAA%iAAAA");
+	ft_printf("AAAAAAAA%%AAAAAAAA");
 }
