@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/25 14:53:45 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/25 15:13:05 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ NAME = libftprintf.a
 LIB = Libft/libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-INCLUDE = -I include
+INCLUDE = -I include -I Libft/include
+LIBFT = Libft/libft.a
 
 #          ----------========== {     SRCS     } ==========----------
 
@@ -52,14 +53,14 @@ VPATH= $(shell find $(SRC_DIR) -type d)
 
 all: $(NAME)
 
-lib:
+$(LIBFT):
 	@make -C Libft
 	
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
-$(NAME): lib $(OBJ)
-	@ar -rc $(NAME) $(OBJ)
+$(NAME): $(LIBFT) $(OBJ)
+	@ar -rc $(NAME) $(OBJ) $(LIBFT)
 	@ranlib $(NAME)
 
 clean:
@@ -78,4 +79,4 @@ fclean: clean lfclean
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean lclean lfclean fclean re 
