@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/25 15:13:05 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/26 10:02:13 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,6 @@ param7x.c\
 param8x.c\
 param9prc.c\
 
-OBJ = $(SRC:.c=.o)
-
-#          ----------========== {   SRCS LIB   } ==========----------
-
-SRC += \
-ft_strchr.c\
-
 #          ----------========== {     OBJS     } ==========----------
 
 SRC_DIR = src/
@@ -58,20 +51,24 @@ $(LIBFT):
 	
 $(OBJ_DIR)%.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	@printf "\e[1;32m.\e[0;m"
 
-$(NAME): $(LIBFT) $(OBJ)
+$(NAME): title $(LIBFT) $(OBJ)
 	@ar -rc $(NAME) $(OBJ) $(LIBFT)
 	@ranlib $(NAME)
 
-clean:
-	@rm -f $(OBJ)
-	@printf "\e[0;31mDELETED : *.o from Printf\e[0;m\n"
+title:
+	@printf "\e[1;32mPrintf :\e[0;m"
 
 lclean: 
 	@make clean -C Libft
 
 lfclean: 
 	@make fclean -C Libft
+
+clean:
+	@rm -f $(OBJ)
+	@printf "\e[0;31mDELETED : *.o from Printf\e[0;m\n"
 
 fclean: clean lfclean
 	@rm -f $(NAME)
