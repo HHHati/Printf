@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/26 10:12:01 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/26 11:45:36 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@
 #          ----------========== {     VARS     } ==========----------
 
 NAME = libftprintf.a
-LIB = Libft/libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 INCLUDE = -I include -I Libft/include
