@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/26 10:02:13 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/26 10:12:01 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,12 +53,15 @@ $(OBJ_DIR)%.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 	@printf "\e[1;32m.\e[0;m"
 
-$(NAME): title $(LIBFT) $(OBJ)
+$(NAME): title $(OBJ_DIR) $(LIBFT) $(OBJ)
 	@ar -rc $(NAME) $(OBJ) $(LIBFT)
 	@ranlib $(NAME)
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
 title:
-	@printf "\e[1;32mPrintf :\e[0;m"
+	@printf "\e[1;32mPrintf       :\e[0;m"
 
 lclean: 
 	@make clean -C Libft
