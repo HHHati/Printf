@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   param1c.c                                          :+:      :+:    :+:   */
+/*   2_param_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:18:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/26 12:05:18 by bade-lee         ###   ########.fr       */
+/*   Created: 2021/11/23 11:18:15 by bade-lee          #+#    #+#             */
+/*   Updated: 2021/11/29 11:18:40 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_param1c(va_arg(va_list param, int))
+int	param_s(va_list params, int *counter)
 {
-	const char	c = va_arg(va_list param, int);
+	const char	*str = (char *) va_arg(params, char *);
 
-	write(1, &c, 1);
-	return (0);
+	ft_putstr(str);
+	*counter = *counter + ft_strlen(str);
+	return (1);
 }

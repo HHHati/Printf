@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   param4d.c                                          :+:      :+:    :+:   */
+/*   4_param_d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:20 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 13:13:39 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 11:18:51 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_param4d(va_arg(list, int))
+int	param_d(va_list params, int *counter)
 {
-	ft_putnbr(va_arg(list, int));
-	return (0);
+	const int	i = (int) va_arg(params, int);
+
+	ft_putnbr(i));
+	*counter = *counter + ft_strlen(ft_itoa(i));
+	return (1);
 }

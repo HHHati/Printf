@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 10:23:50 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 11:22:00 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_apply_param(int param)
 {
-	static int	(*function[10])() = {&ft_param1c, &ft_param2s,
-		&ft_param3p, &ft_param4d, &ft_param5i, &ft_param6u,
-		&ft_param7x, &ft_param8X, &ft_param9prc};
+	static int	(*function[9])() = {&param_c, &param_s,
+		&param_p, &param_d, &param_i, &fparam_u,
+		&param_xlow, &param_xup, &param_prc};
 
 	function[param]();
 }
@@ -46,5 +46,5 @@ int	ft_printf(const char *param, ...)
 		i++;
 	}
 	va_end(list);
-	return (0);
+	return (counter);
 }

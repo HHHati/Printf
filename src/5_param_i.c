@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   param3p.c                                          :+:      :+:    :+:   */
+/*   5_param_i.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:18:17 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/23 13:13:06 by bade-lee         ###   ########.fr       */
+/*   Created: 2021/11/23 11:18:23 by bade-lee          #+#    #+#             */
+/*   Updated: 2021/11/29 11:18:57 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_param3p(va_arg(list,))
+int	param_i(va_list params, int *counter)
 {
+	const int	i = (int) va_arg(params, int);
 
+	ft_putnbr(i));
+	*counter = *counter + ft_strlen(ft_itoa(i));
+	return (1);
 }
