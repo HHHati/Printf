@@ -6,12 +6,15 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:17 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 12:45:41 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:20:05 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	param_p(va_list params, int *counter)
+int	param_p(int *counter, va_list params)
 {
+	(void) params;
+	(void) counter;
+	return (1);
 }

@@ -6,19 +6,19 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 12:15:27 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:24:06 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_apply_param(int param)
+void	ft_apply_param(int param, va_list params, size_t *counter)
 {
 	static int	(*function[9])() = {&param_c, &param_s,
 		&param_p, &param_d, &param_i, &param_u,
 		&param_xlow, &param_xup, &param_prc};
 
-	function[param]();
+	function[param](counter, params);
 }
 
 int	ft_printf(const char *param, ...)
@@ -35,7 +35,8 @@ int	ft_printf(const char *param, ...)
 	{
 		if (param[i] == '%' && ft_strchr(options, param[i + 1]))
 		{
-			ft_apply_param(ft_strchr(options, param[i + 1]) - options);
+			ft_apply_param(ft_strchr(options, param[i + 1]) - options,
+				list, &counter);
 			i++;
 		}
 		else

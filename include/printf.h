@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:24:34 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 12:44:55 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:24:47 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 //          ----------========== {     FCTS     } ==========----------
 
 int	ft_printf(const char *param, ...);
-int	param_c(va_list params, int *counter);
-int	param_s(va_list params, int *counter);
-int	param_p(va_list params, int *counter);
-int	param_d(va_list params, int *counter);
-int	param_i(va_list params, int *counter);
-int	param_u(va_list params, int *counter);
-int	param_xlow(va_list params, int *counter);
-int	param_xup(va_list params, int *counter);
-int	param_prc(va_list params, int *counter);
+int	param_c(int *counter, va_list params);
+int	param_s(int *counter, va_list params);
+int	param_p(int *counter, va_list params);
+int	param_d(int *counter, va_list params);
+int	param_i(int *counter, va_list params);
+int	param_u(int *counter, va_list params);
+int	param_xlow(int *counter, va_list params);
+int	param_xup(int *counter, va_list params);
+int	param_prc(int *counter);
 
 #endif
