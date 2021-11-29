@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 11:22:00 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:13:17 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_apply_param(int param)
 {
-	static int	(*function[9])() = {&param_c, &param_s,
-		&param_p, &param_d, &param_i, &fparam_u,
+	static int	(*function[8])() = {&param_c, &param_s,
+		&param_p, &param_d, &param_i, &param_u,
 		&param_xlow, &param_xup, &param_prc};
 
 	function[param]();
@@ -41,7 +41,7 @@ int	ft_printf(const char *param, ...)
 		else
 		{
 			write (1, &param[i], 1);
-			count++;
+			counter++;
 		}
 		i++;
 	}

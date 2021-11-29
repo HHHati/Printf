@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:24:34 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/25 10:45:51 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:04:36 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include "libft.h"
 
 //          ----------========== {     FCTS     } ==========----------
 
 int	ft_printf(const char *param, ...);
-int	ft_param1c(va_arg(list, int));
-int	ft_param2s(va_arg(list, int));
-int	ft_param3p(va_arg(list, int));
-int	ft_param4d(va_arg(list, int));
-int	ft_param5i(va_arg(list, int));
-int	ft_param6u(va_arg(list, int));
-int	ft_param7x(va_arg(list, int));
-int	ft_param8X(va_arg(list, int));
-int	ft_param9prc(va_arg(list, int));
+int	param_c(va_list params, int *counter);
+int	param_s(va_list params, int *counter);
+int	param_p(va_list params, int *counter);
+int	param_d(va_list params, int *counter);
+int	param_i(va_list params, int *counter);
+int	param_u(va_list params, int *counter);
+int	param_xlow(va_list params, int *counter);
+int	param_xup(va_list params, int *counter);
+int	param_prc(va_list params, int *counter);
 
 #endif
