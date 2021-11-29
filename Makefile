@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/29 12:04:01 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/29 12:43:15 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,15 +23,15 @@ LIBFT = Libft/libft.a
 
 SRC = \
 ft_printf.c\
-param1c.c\
-param2s.c\
-param3p.c\
-param4d.c\
-param5i.c\
-param6u.c\
-param7x.c\
-param8x.c\
-param9prc.c\
+1_param_c.c\
+2_param_s.c\
+3_param_p.c\
+4_param_d.c\
+5_param_i.c\
+6_param_u.c\
+7_param_x.c\
+8_param_X.c\
+9_param_prc.c\
 
 #          ----------========== {     OBJS     } ==========----------
 

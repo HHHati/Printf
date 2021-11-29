@@ -6,9 +6,11 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:31 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 11:26:33 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:45:58 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "printf.h"
 
 int	param_xup(va_list params, int *counter)
 {
