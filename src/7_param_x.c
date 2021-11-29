@@ -6,13 +6,13 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:28 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 13:20:22 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:29:31 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_check(char *str)
+static int	ft_check(char *str)
 {
 	int	n;
 	int	i;
@@ -34,7 +34,7 @@ int	ft_check(char *str)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base, int *counter)
+static void	ft_putnbr_base(int nbr, char *base, int *counter)
 {
 	unsigned int	n;
 	unsigned int	i;
