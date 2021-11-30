@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/29 14:33:22 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/11/30 10:48:40 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,10 +59,10 @@ $(NAME): $(OBJ_DIR) $(LIBFT) title $(OBJ)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-exe: all
-	@gcc -I include -I Libft/include Libft/libft.a libftprintf.a main.c
-	@./a.out
-
+#exe: all
+#	@gcc -I include -I Libft/include Libft/libft.a libftprintf.a main.c
+#	@./a.out
+#
 title:
 	@printf "\n\e[1;32mPrintf       :\e[0;m"
 

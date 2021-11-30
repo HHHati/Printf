@@ -6,11 +6,11 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:28 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/29 14:29:31 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/30 10:58:46 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_check(char *str)
 {
