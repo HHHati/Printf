@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:17 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 12:03:04 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/30 13:32:06 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_check(char *str)
 	return (1);
 }
 
-static void	ft_putnbr_base(int nbr, char *base, int *counter)
+static void	ft_putnbr_base(unsigned long long int nbr, char *base, int *counter)
 {
 	unsigned int	n;
 	unsigned int	i;
@@ -64,7 +64,7 @@ static void	ft_putnbr_base(int nbr, char *base, int *counter)
 
 int	param_p(int *counter, va_list params)
 {
-	const int	nb = (int) va_arg(params, void *);
+	const unsigned long long int	nb = va_arg(params, unsigned long long int);
 
 	ft_putstr_fd("0x", 1);
 	*counter = *counter + 2;
