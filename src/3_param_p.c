@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:17 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 10:58:35 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/11/30 12:03:04 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	param_p(int *counter, va_list params)
 {
 	const int	nb = (int) va_arg(params, void *);
 
+	ft_putstr_fd("0x", 1);
+	*counter = *counter + 2;
 	ft_putnbr_base(nb, "0123456789abcdef", counter);
 	return (1);
 }
