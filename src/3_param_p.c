@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:17 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 13:32:06 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/12/01 11:35:29 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static int	ft_check(char *str)
 
 static void	ft_putnbr_base(unsigned long long int nbr, char *base, int *counter)
 {
-	unsigned int	n;
-	unsigned int	i;
+	unsigned long long int	n;
+	unsigned long long int	i;
 
 	if (ft_check(base) == 1)
 	{
