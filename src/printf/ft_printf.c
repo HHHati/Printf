@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:43:59 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 10:59:03 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/12/01 14:36:00 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_printf(const char *param, ...)
 		}
 		else
 		{
-			write (1, &param[i], 1);
+			write(1, &param[i], 1);
 			counter++;
 		}
 		i++;

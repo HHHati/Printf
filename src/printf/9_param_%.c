@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:01:21 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 10:58:58 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/12/01 14:16:30 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	param_prc(int *counter)
 {
-	write(1, "%", 1);
+	ft_putchar_fd('%', 1);
 	*counter = *counter + 1;
 	return (1);
 }
