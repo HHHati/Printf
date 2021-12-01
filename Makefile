@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/11/30 10:48:40 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/12/01 11:17:15 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,34 +52,26 @@ $(OBJ_DIR)%.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 	@printf "\e[1;32m.\e[0;m"
 
-$(NAME): $(OBJ_DIR) $(LIBFT) title $(OBJ)
+$(NAME): $(OBJ_DIR) $(LIBFT) $(OBJ)
+	@printf "\n\e[1;32m[Libftprintf.a]\e[0;m\n"
 	@ar -rc $(NAME) $(OBJ) $(LIBFT)
 	@ranlib $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-#exe: all
-#	@gcc -I include -I Libft/include Libft/libft.a libftprintf.a main.c
-#	@./a.out
-#
-title:
-	@printf "\n\e[1;32mPrintf       :\e[0;m"
-
-lclean: 
-	@make clean -C Libft
-
-lfclean: 
-	@make fclean -C Libft
+exe: all
+	@$(CC) $(FLAGS) $(INCLUDE) $(LIBFT) $(NAME) main.c
+	@./a.out
 
 clean:
 	@rm -f $(OBJ)
-	@printf "\e[0;31mDELETED : *.o from Printf\e[0;m\n"
+	@make clean -C Libft
 
-fclean: clean lfclean
+fclean: clean
 	@rm -f $(NAME)
-	@printf "\e[0;31mDELETED : libftprintf.a from Printf\e[0;m\n"
+	@make fclean -C Libft
 
 re: fclean all
 
-.PHONY: all clean lclean lfclean fclean re
+.PHONY: all clean fclean re
