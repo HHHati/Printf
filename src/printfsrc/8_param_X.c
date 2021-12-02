@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:18:31 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/30 10:58:52 by bade-lee         ###   ########.fr       */
+/*   Updated: 2021/12/02 10:27:40 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,14 @@ static void	ft_putnbr_base(int nbr, char *base, int *counter)
 	if (ft_check(base) == 1)
 	{
 		i = ft_strlen(base);
-		if (nbr < 0)
-		{
-			n = -nbr;
-			ft_putchar_fd('-', 1);
-			*counter = *counter + 1;
-		}
-		else
-		{
-			n = nbr;
-		}
+		n = nbr;
 		if (n > i - 1)
 		{
 			ft_putnbr_base(n / i, base, counter);
-			*counter = *counter + 1;
 			n %= i;
 		}
 		ft_putchar_fd(base[n], 1);
+		*counter = *counter + 1;
 	}
 }
 
