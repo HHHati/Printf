@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 11:24:36 by bade-lee          #+#    #+#              #
-#    Updated: 2021/12/01 14:44:49 by bade-lee         ###   ########.fr        #
+#    Updated: 2021/12/02 10:57:43 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,10 +65,6 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-
-exe: all
-	@$(CC) $(FLAGS) $(INCLUDE) $(NAME) main.c
-	@./a.out
 
 clean:
 	@rm -f $(OBJ)
